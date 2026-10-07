@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    { "source": "/service-cnc-milling.html", "destination": "/services/cnc-milling.html", "permanent": true },
+    { "source": "/service-cnc-turning.html", "destination": "/services/cnc-turning.html", "permanent": true },
+    { "source": "/service-prototyping.html", "destination": "/services/prototyping.html", "permanent": true },
+    { "source": "/service-laser-cutting.html", "destination": "/services/laser-cutting.html", "permanent": true },
+    { "source": "/service-metal-bending.html", "destination": "/services/bending.html", "permanent": true },
+    { "source": "/service-waterjet.html", "destination": "/services/waterjet.html", "permanent": true },
+    { "source": "/service-fasteners.html", "destination": "/services/fasteners.html", "permanent": true },
+    { "source": "/service-metal-stamping.html", "destination": "/services/stamping.html", "permanent": true },
+    { "source": "/service-welding.html", "destination": "/services/welding.html", "permanent": true },
+    { "source": "/service-finishing.html", "destination": "/services/finishing.html", "permanent": true },
+    { "source": "/services.html", "destination": "/services/index.html", "permanent": true },
+    { "source": "/capabilities.html", "destination": "/services/compare.html", "permanent": true }
+  ]
+}
