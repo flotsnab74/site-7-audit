@@ -61,6 +61,30 @@
       });
     });
 
+    // Мини-галереи внутри карточек (несколько фото одной детали)
+    [].slice.call(root.querySelectorAll('[data-gal]')).forEach(function (gal) {
+      var main = gal.querySelector('.pp-gal-main');
+      var btns = [].slice.call(gal.querySelectorAll('.pp-gal-btn'));
+      var gtimer = null;
+      function show(btn) {
+        if (btn.classList.contains('is-on')) return;
+        btns.forEach(function (b) { b.classList.toggle('is-on', b === btn); });
+        main.classList.add('is-swapping');
+        setTimeout(function () {
+          main.src = btn.getAttribute('data-src');
+          main.alt = btn.getAttribute('data-alt') || '';
+          main.classList.remove('is-swapping');
+        }, reduce ? 0 : 150);
+      }
+      btns.forEach(function (btn) {
+        btn.addEventListener('click', function () { show(btn); });
+        if (canHover) {
+          btn.addEventListener('mouseenter', function () { clearTimeout(gtimer); gtimer = setTimeout(function () { show(btn); }, 90); });
+          btn.addEventListener('mouseleave', function () { clearTimeout(gtimer); });
+        }
+      });
+    });
+
     select(tiles[0].getAttribute('data-part'));
   }
 
