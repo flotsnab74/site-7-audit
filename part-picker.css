@@ -34,6 +34,7 @@
 .pp-body .fact-list{ border:none; padding:0; background:transparent; }
 .pp-body .fact-list .fact{ display:grid; grid-template-columns:128px 1fr; gap:14px; align-items:baseline; }
 .pp-body .fact-list .fact .v{ max-width:none; text-align:left; font-size:.92rem; line-height:1.5; }
+.pp-caption{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.04em; color:var(--mist-400); margin:0 0 12px; }
 .pp-lead{ color:var(--graphite-700); font-size:.98rem; margin:0 0 6px; }
 .pp-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
 .pp-note{ margin:22px 0 0; max-width:78ch; color:var(--mist-400); font-size:.85rem; }
