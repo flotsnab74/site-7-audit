@@ -1,0 +1,54 @@
+/* Part picker — интерактивный подбор по типу детали (products.html).
+   Использует переменные и компоненты основного styles.css (.fact-list, .btn, .dim-line). */
+.pp{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.12fr); gap:32px; align-items:start; }
+.pp-hint{ font-family:var(--font-mono); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; color:var(--mist-400); margin:0 0 14px; }
+@media (hover:none){ .pp-hint .mouse{ display:none; } }
+@media (hover:hover){ .pp-hint .touch{ display:none; } }
+
+/* Плитки с мини-фото */
+.pp-tiles{ display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.pp-tile{ position:relative; display:flex; flex-direction:column; height:100%; margin:0; padding:0; text-align:left; font:inherit; color:inherit; background:var(--white); border:1px solid var(--steel-200); cursor:pointer; overflow:hidden; transition:border-color .2s ease, box-shadow .25s ease, transform .25s ease; }
+.pp-tile:hover, .pp-tile:focus-visible{ border-color:var(--copper-400); transform:translateY(-2px); box-shadow:0 10px 24px rgba(23,26,28,.12); outline:none; }
+.pp-tile:focus-visible{ box-shadow:0 0 0 2px var(--copper-400), 0 10px 24px rgba(23,26,28,.12); }
+.pp-tile[aria-selected="true"]{ border-color:var(--copper-500); box-shadow:0 0 0 1px var(--copper-500), 0 10px 24px rgba(23,26,28,.12); }
+.pp-thumb{ aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; background:var(--steel-100); overflow:hidden; }
+.pp-thumb img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s cubic-bezier(.2,.7,.2,1); }
+.pp-tile:hover .pp-thumb img{ transform:scale(1.07); }
+.pp-thumb svg{ width:44%; height:auto; color:var(--copper-500); }
+.pp-label{ display:flex; align-items:center; justify-content:space-between; gap:8px; padding:12px 14px; font-family:var(--font-display); font-weight:700; font-size:.95rem; line-height:1.25; }
+.pp-dot{ position:relative; flex-shrink:0; width:14px; height:14px; border:1.5px solid var(--mist-200); border-radius:50%; }
+.pp-tile[aria-selected="true"] .pp-dot{ border-color:var(--copper-500); }
+.pp-tile[aria-selected="true"] .pp-dot::after{ content:""; position:absolute; inset:2px; border-radius:50%; background:var(--copper-500); }
+
+/* Карточка изделия */
+.pp-panel{ background:var(--white); border:1px solid var(--steel-200); scroll-margin-top:88px; }
+.pp-panel[hidden]{ display:none; }
+.pp-panel.is-active{ animation:pp-in .3s ease both; }
+@keyframes pp-in{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+.pp-media{ aspect-ratio:3/2; display:flex; align-items:center; justify-content:center; background:var(--steel-100); overflow:hidden; }
+.pp-media img{ width:100%; height:100%; object-fit:cover; display:block; }
+.pp-media svg{ width:84px; height:auto; color:var(--copper-500); }
+.pp-body{ padding:24px 26px 26px; }
+.pp-eyebrow{ font-family:var(--font-mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; color:var(--copper-500); }
+.pp-body h3{ font-size:1.55rem; margin:8px 0 16px; }
+.pp-body .fact-list{ border:none; padding:0; background:transparent; }
+.pp-body .fact-list .fact{ display:grid; grid-template-columns:128px 1fr; gap:14px; align-items:baseline; }
+.pp-body .fact-list .fact .v{ max-width:none; text-align:left; font-size:.92rem; line-height:1.5; }
+.pp-lead{ color:var(--graphite-700); font-size:.98rem; margin:0 0 6px; }
+.pp-actions{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.pp-note{ margin:22px 0 0; max-width:78ch; color:var(--mist-400); font-size:.85rem; }
+
+@media (max-width:900px){ .pp{ grid-template-columns:1fr; gap:24px; } }
+@media (max-width:520px){
+  .pp-tiles{ gap:8px; }
+  .pp-label{ padding:9px 8px; font-size:.78rem; }
+  .pp-dot{ display:none; }
+  .pp-body{ padding:20px 18px 22px; }
+  .pp-body .fact-list .fact{ grid-template-columns:1fr; gap:2px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .pp-panel.is-active{ animation:none; }
+  .pp-tile, .pp-thumb img{ transition:none; }
+  .pp-tile:hover{ transform:none; }
+  .pp-tile:hover .pp-thumb img{ transform:none; }
+}

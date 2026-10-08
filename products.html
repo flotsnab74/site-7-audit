@@ -3,23 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Примеры продукции — Precision Metalworks</title>
-<meta name="description" content="Подбираем завод в Китае под ваш чертёж, контролируем производство и поставляем готовые детали в Россию.">
+<title>Продукция: подбор по типу детали — Precision Metalworks</title>
+<meta name="description" content="Выберите тип детали — корпус, вал, втулка, кронштейн, фланец, крепёж, листовая деталь, сварной узел — и посмотрите, какие технологии, материалы и покрытия обычно подходят.">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Precision Metalworks">
-<meta property="og:title" content="Примеры продукции — Precision Metalworks">
-<meta property="og:description" content="Подбираем завод в Китае под ваш чертёж, контролируем производство и поставляем готовые детали в Россию.">
+<meta property="og:title" content="Продукция: подбор по типу детали — Precision Metalworks">
+<meta property="og:description" content="Выберите тип детали — корпус, вал, втулка, кронштейн, фланец, крепёж, листовая деталь, сварной узел — и посмотрите, какие технологии, материалы и покрытия обычно подходят.">
 <meta property="og:image" content="assets/hero-poster.jpg">
 <meta property="og:locale" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Примеры продукции — Precision Metalworks">
-<meta name="twitter:description" content="Подбираем завод в Китае под ваш чертёж, контролируем производство и поставляем готовые детали в Россию.">
+<meta name="twitter:title" content="Продукция: подбор по типу детали — Precision Metalworks">
+<meta name="twitter:description" content="Выберите тип детали — корпус, вал, втулка, кронштейн, фланец, крепёж, листовая деталь, сварной узел — и посмотрите, какие технологии, материалы и покрытия обычно подходят.">
 <meta name="twitter:image" content="assets/hero-poster.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="part-picker.css">
 </head>
 <body>
 <header class="site-header">
@@ -60,79 +61,193 @@
 <section class="hero" style="padding:72px 0 56px;">
   <div class="container">
     <div class="dim-line eyebrow"><span class="rule"></span>Продукция<span class="rule"></span></div>
-    <h1 style="font-size:clamp(2rem,4vw,3rem);max-width:22ch;">Примеры конфигураций — материал, технология, покрытие, партия</h1>
-    <p class="lead" style="max-width:60ch;">Это ориентиры, а не готовый каталог: под ваш чертёж технология, материал и покрытие подбираются заново и фиксируется в расчёте.</p>
+    <h1 style="font-size:clamp(2rem,4vw,3rem);max-width:22ch;">Продукция: какой у вас тип детали?</h1>
+    <p class="lead" style="max-width:60ch;">Выберите тип детали — покажем, какие технологии, материалы и покрытия обычно подходят. Это ориентиры, а не готовый каталог: под ваш чертёж всё подбирается заново и фиксируется в расчёте.</p>
   </div>
 </section>
 <section class="section section-light reveal">
   <div class="container">
-    <div class="card-grid card-grid-2">
-      <div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1711418235334-8895331a6cf9?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Алюминиевый корпус</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Алюминий 6061</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">Фрезеровка ЧПУ</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Анодирование</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">50–5000 шт.</span></div>
+    <div class="section-head">
+      <div class="dim-line no-rule">Подбор по типу детали</div>
+      <h2>Выберите тип детали</h2>
     </div>
-  </div><div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1666618090858-fbcee636bd3e?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Токарная втулка</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Нержавеющая сталь 304</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Пассивация</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">100–20000 шт.</span></div>
+    <div class="pp" data-part-picker>
+      <div>
+        <p class="pp-hint"><span class="mouse">Наведите курсор на деталь — справа откроется карточка</span><span class="touch">Нажмите на деталь — ниже откроется карточка</span></p>
+        <div class="pp-tiles" role="tablist" aria-label="Тип детали">
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-korpus" data-part="korpus" aria-controls="pp-panel-korpus" aria-selected="true"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-housing-d16.jpg" alt=""></span><span class="pp-label">Корпус<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-val" data-part="val" aria-controls="pp-panel-val" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-shaft.jpg" alt=""></span><span class="pp-label">Вал<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-kronshtein" data-part="kronshtein" aria-controls="pp-panel-kronshtein" aria-selected="false" tabindex="-1"><span class="pp-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 10h12v32h28v12H12z"/><circle cx="18" cy="17" r="2.2"/><circle cx="18" cy="34" r="2.2"/><circle cx="36" cy="48" r="2.2"/><circle cx="46" cy="48" r="2.2"/></svg></span><span class="pp-label">Кронштейн<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-vtulka" data-part="vtulka" aria-controls="pp-panel-vtulka" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-bushing.jpg" alt=""></span><span class="pp-label">Втулка<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-flanets" data-part="flanets" aria-controls="pp-panel-flanets" aria-selected="false" tabindex="-1"><span class="pp-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="23"/><circle cx="32" cy="32" r="9"/><circle cx="32" cy="13" r="2.4"/><circle cx="32" cy="51" r="2.4"/><circle cx="13" cy="32" r="2.4"/><circle cx="51" cy="32" r="2.4"/></svg></span><span class="pp-label">Фланец<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-krepezh" data-part="krepezh" aria-controls="pp-panel-krepezh" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-fastener-set.jpg" alt=""></span><span class="pp-label">Крепёж и фитинги<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-listovaya" data-part="listovaya" aria-controls="pp-panel-listovaya" aria-selected="false" tabindex="-1"><span class="pp-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M8 38l14-10h34L42 38z"/><path d="M8 38v6h34v-6M42 38l14-10v6L42 44"/><ellipse cx="24" cy="33" rx="3" ry="1.6"/><ellipse cx="36" cy="33" rx="3" ry="1.6"/></svg></span><span class="pp-label">Листовая деталь<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-svarnoy" data-part="svarnoy" aria-controls="pp-panel-svarnoy" aria-selected="false" tabindex="-1"><span class="pp-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="8" y="42" width="48" height="9"/><rect x="28" y="12" width="8" height="30"/><path d="M22 42l6-6M42 42l-6-6M17 42l3-3M47 42l-3-3"/></svg></span><span class="pp-label">Сварной узел<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-drugoe" data-part="drugoe" aria-controls="pp-panel-drugoe" aria-selected="false" tabindex="-1"><span class="pp-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M32 8l21 12v24L32 56 11 44V20z"/><path d="M11 20l21 12 21-12M32 32v24"/></svg></span><span class="pp-label">Другое<span class="pp-dot" aria-hidden="true"></span></span></button>
+        </div>
+      </div>
+      <div class="pp-panels">
+      <div class="pp-panel" role="tabpanel" id="pp-panel-korpus" aria-labelledby="pp-tab-korpus" data-part="korpus">
+        <div class="pp-media"><img loading="lazy" decoding="async" src="assets/part-housing-d16.jpg" alt="Фрезерованный алюминиевый корпус с отверстиями и фланцем"></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для корпуса обычно подходят</div>
+          <h3>Корпус</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">Фрезеровка ЧПУ: 3-, 4- и 5-осевая обработка</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Алюминий 6061 — анодирование, партия 50–5000 шт.<br>Алюминий 7075 — твёрдое анодирование, партия 20–3000 шт.</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">до ±0,01 мм, уточняется по чертежу</span></div>
+            <div class="fact"><span class="k">Что обычно делают</span><span class="v">Корпусные детали, кронштейны, пресс-формы и сложные узлы</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-milling.html" class="btn btn-ghost on-light">О фрезеровке ЧПУ →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-val" aria-labelledby="pp-tab-val" data-part="val" hidden>
+        <div class="pp-media"><img loading="lazy" decoding="async" src="assets/part-shaft.jpg" alt="Вал с зубчатым венцом, шлицами и резьбой"></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для вала обычно подходят</div>
+          <h3>Вал</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка ЧПУ</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь 316 — полировка, партия 20–5000 шт.</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">высокая, шероховатость от Ra 0,4; диаметр до 500 мм, длина до 2000 мм</span></div>
+            <div class="fact"><span class="k">Что обычно делают</span><span class="v">Валы, оси и резьбовые компоненты</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии; для валов — контроль резьб и посадок</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-turning.html" class="btn btn-ghost on-light">О токарной обработке →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-kronshtein" aria-labelledby="pp-tab-kronshtein" data-part="kronshtein" hidden>
+        <div class="pp-media"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 10h12v32h28v12H12z"/><circle cx="18" cy="17" r="2.2"/><circle cx="18" cy="34" r="2.2"/><circle cx="36" cy="48" r="2.2"/><circle cx="46" cy="48" r="2.2"/></svg></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для кронштейна обычно подходят</div>
+          <h3>Кронштейн</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">5-осевая фрезеровка</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Титан Grade 5 — пассивация, партия 10–1000 шт.</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">до ±0,01 мм (5-осевая обработка), уточняется по чертежу</span></div>
+            <div class="fact"><span class="k">Что обычно делают</span><span class="v">Кронштейны, корпусные детали и сложные узлы</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-milling.html" class="btn btn-ghost on-light">О фрезеровке ЧПУ →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-vtulka" aria-labelledby="pp-tab-vtulka" data-part="vtulka" hidden>
+        <div class="pp-media"><img loading="lazy" decoding="async" src="assets/part-bushing.jpg" alt="Втулка с фланцем"></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для втулки обычно подходят</div>
+          <h3>Втулка</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка ЧПУ</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь 304 — пассивация, партия 100–20000 шт.</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">высокая, шероховатость от Ra 0,4</span></div>
+            <div class="fact"><span class="k">Что обычно делают</span><span class="v">Втулки, штуцеры, ниппели и оси</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-turning.html" class="btn btn-ghost on-light">О токарной обработке →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-flanets" aria-labelledby="pp-tab-flanets" data-part="flanets" hidden>
+        <div class="pp-media"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="32" cy="32" r="23"/><circle cx="32" cy="32" r="9"/><circle cx="32" cy="13" r="2.4"/><circle cx="32" cy="51" r="2.4"/><circle cx="13" cy="32" r="2.4"/><circle cx="51" cy="32" r="2.4"/></svg></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для фланца обычно подходят</div>
+          <h3>Фланец</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">Токарно-фрезерная обработка</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь — пассивация, партия 50–10000 шт.</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">по чертежу; критичные размеры проверяются на первой детали</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-turning.html" class="btn btn-ghost on-light">О токарной обработке →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-krepezh" aria-labelledby="pp-tab-krepezh" data-part="krepezh" hidden>
+        <div class="pp-media"><img loading="lazy" decoding="async" src="assets/part-fastener-set.jpg" alt="Крепёж: шестигранный болт, гайка, плоская и пружинная шайбы"></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для крепежа и фитингов обычно подходят</div>
+          <h3>Крепёж и фитинги</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка ЧПУ и холодная штамповка</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь (A2, A4), углеродистая сталь с покрытием (цинк, чернение), титан, латунь.<br>Пример: латунный фитинг C36000 — никелирование по запросу, партия 500–50000 шт.</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">головка и привод ±0,02–0,05 мм; резьба ISO, поле допуска 6g/6H стандартно</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии; резьба — калибрами проходной/непроходной на каждой партии</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/fasteners.html" class="btn btn-ghost on-light">О крепеже →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-listovaya" aria-labelledby="pp-tab-listovaya" data-part="listovaya" hidden>
+        <div class="pp-media"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M8 38l14-10h34L42 38z"/><path d="M8 38v6h34v-6M42 38l14-10v6L42 44"/><ellipse cx="24" cy="33" rx="3" ry="1.6"/><ellipse cx="36" cy="33" rx="3" ry="1.6"/></svg></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для листовой детали обычно подходят</div>
+          <h3>Листовая деталь</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">Лазерная резка, гибка с ЧПУ, штамповка</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь — без покрытия или пассивация. Пример: штампованная деталь, партия 5000–100000+ шт.</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">лазерная резка ~±0,1–0,15 мм по контуру; гибка — угол до ±0,5°, толщина 0,5–12 мм</span></div>
+            <div class="fact"><span class="k">Партия</span><span class="v">штамповка — от ~2000 шт. (нужен индивидуальный штамп); резка и гибка — от единиц</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/stamping.html" class="btn btn-ghost on-light">О штамповке →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-svarnoy" aria-labelledby="pp-tab-svarnoy" data-part="svarnoy" hidden>
+        <div class="pp-media"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="8" y="42" width="48" height="9"/><rect x="28" y="12" width="8" height="30"/><path d="M22 42l6-6M42 42l-6-6M17 42l3-3M47 42l-3-3"/></svg></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Для сварного узла обычно подходят</div>
+          <h3>Сварной узел</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Технология</span><span class="v">Сварка (включая точечную) и сборка</span></div>
+            <div class="fact"><span class="k">Материал</span><span class="v">Сталь, нержавеющая сталь, алюминий</span></div>
+            <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">допуск шва — по стандарту (AWS D1.1 / ISO 13920) и чертежу узла</span></div>
+            <div class="fact"><span class="k">Что обычно делают</span><span class="v">Сварные корпуса, кронштейны, рамы, монтажные узлы; сборка резьбовых вставок, запрессовка крепежа, проверка комплектности</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/welding.html" class="btn btn-ghost on-light">О сварке и сборке →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="pp-panel-drugoe" aria-labelledby="pp-tab-drugoe" data-part="drugoe" hidden>
+        <div class="pp-media"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M32 8l21 12v24L32 56 11 44V20z"/><path d="M11 20l21 12 21-12M32 32v24"/></svg></div>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Нет вашей детали в списке?</div>
+          <h3>Другая деталь</h3>
+          <p class="pp-lead">Не проблема: пришлите чертёж или опишите деталь — подберём технологию, материал и покрытие.</p>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Что прислать</span><span class="v">Чертёж в формате STEP, STP, PDF, DWG, DXF или ZIP. Если чертежа нет — опишите деталь и приложите эскиз или фото</span></div>
+            <div class="fact"><span class="k">Что получите</span><span class="v">Расчёт стоимости, подбор завода и сроки</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/index.html" class="btn btn-ghost on-light">Все услуги →</a>
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
-  </div><div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1652888510609-ed2d2ad64d6b?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Латунный фитинг</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Латунь C36000</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Никелирование по запросу</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">500–50000 шт.</span></div>
-    </div>
-  </div><div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1713371398484-cc4e4f6a262a?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Вал из нержавеющей стали</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Нержавеющая сталь 316</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Полировка</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">20–5000 шт.</span></div>
-    </div>
-  </div><div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1645754884968-a00b7ed62c43?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Титановый кронштейн</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Титан Grade 5</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">5-осевая фрезеровка</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Пассивация</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">10–1000 шт.</span></div>
-    </div>
-  </div><div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1647586028042-1de4d4a935e6?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Штампованная деталь</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Нержавеющая сталь</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">Штамповка</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Без покрытия / пассивация</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">5000–100000+ шт.</span></div>
-    </div>
-  </div><div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1764835746713-34a671e73569?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Корпус после фрезеровки</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Алюминий 7075</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">Фрезеровка ЧПУ</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Твёрдое анодирование</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">20–3000 шт.</span></div>
-    </div>
-  </div><div class="card"><img loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1520697517317-6767553cc51a?w=700&q=70&auto=format&fit=crop" alt="" class="card-photo">
-    <h3>Фланец</h3>
-    <div class="fact-list" style="margin-top:14px;border:none;padding:0;background:transparent;">
-      <div class="fact" style="border-top:1px solid var(--steel-200);"><span class="k">Материал</span><span class="v">Нержавеющая сталь</span></div>
-      <div class="fact"><span class="k">Технология</span><span class="v">Токарно-фрезерная обработка</span></div>
-      <div class="fact"><span class="k">Покрытие</span><span class="v">Пассивация</span></div>
-      <div class="fact"><span class="k">Партия</span><span class="v">50–10000 шт.</span></div>
-    </div>
-  </div>
-    </div>
+    <p class="pp-note">Это ориентиры по опыту партнёрских цехов, а не готовый каталог: точные допуски, материал и покрытие подбираются под ваш чертёж и фиксируются в расчёте.</p>
   </div>
 </section>
 <div class="cta-band reveal">
@@ -190,5 +305,6 @@
   });
 </script>
 <script src="reveal.js" defer></script>
+<script src="part-picker.js" defer></script>
 </body>
 </html>
