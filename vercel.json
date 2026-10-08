@@ -12,6 +12,7 @@
     { "source": "/service-finishing.html", "destination": "/services/finishing.html", "permanent": true },
     { "source": "/services.html", "destination": "/services/index.html", "permanent": true },
     { "source": "/capabilities.html", "destination": "/services/compare.html", "permanent": true },
-    { "source": "/products.html", "destination": "/gallery.html", "permanent": true }
+    { "source": "/products.html", "destination": "/gallery.html", "permanent": true },
+    { "source": "/industries.html", "destination": "/gallery.html", "permanent": true }
   ]
 }
