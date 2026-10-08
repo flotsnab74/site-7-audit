@@ -66,16 +66,75 @@
 </section>
 <section class="section section-light reveal">
   <div class="container">
-    <div class="gallery-feature">
-      <div class="gallery-card"><img loading="lazy" decoding="async" src="assets/part-cnc-milling.jpg" alt="Детали после фрезеровки ЧПУ: цилиндрический корпус с резьбой, круглый корпус с карманами и малая деталь с отверстиями"></div>
-      <div class="gallery-feature-text">
-        <div class="k">Пример работы</div>
-        <h2>Детали после фрезеровки ЧПУ</h2>
-        <p>Три детали разной геометрии: цилиндрический корпус с резьбой и продольными пазами, круглый корпус с внутренними карманами и крепёжными отверстиями, малая деталь с поперечными отверстиями.</p>
-        <div class="gallery-feature-actions">
-          <a href="services/cnc-milling.html" class="btn btn-ghost on-light">О фрезеровке ЧПУ →</a>
-          <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+    <div class="section-head">
+      <div class="dim-line no-rule">Пример работы</div>
+      <h2>Детали после токарно-фрезерной обработки</h2>
+    </div>
+    <div class="rp" data-part-picker>
+      <figure class="rp-figure">
+        <div class="rp-stage">
+          <img src="assets/part-cnc-milling.jpg" width="1288" height="952" loading="lazy" decoding="async" alt="Реальные детали из сплава Д16: цилиндрический корпус с резьбой и продольными пазами, круглый корпус с внутренними карманами и малая деталь с поперечными отверстиями">
+          <span class="rp-chip">Реальные детали</span>
+          <div class="rp-hots" role="tablist" aria-label="Детали на фото">
+          <button type="button" class="rp-hot" role="tab" id="rp-tab-cyl" data-part="cyl" aria-controls="rp-panel-cyl" aria-selected="true" aria-label="Цилиндрический корпус" style="--x:4.6%;--y:20.5%;--w:42.4%;--h:48%;--r:18px;"><span class="rp-dot" aria-hidden="true"></span><span class="rp-tip">Цилиндрический корпус</span></button>
+          <button type="button" class="rp-hot" role="tab" id="rp-tab-rnd" data-part="rnd" aria-controls="rp-panel-rnd" aria-selected="false" tabindex="-1" aria-label="Круглый корпус с карманами" style="--x:53.2%;--y:29%;--w:29.4%;--h:41.5%;--r:50%;"><span class="rp-dot" aria-hidden="true"></span><span class="rp-tip">Круглый корпус с карманами</span></button>
+          <button type="button" class="rp-hot" role="tab" id="rp-tab-sml" data-part="sml" aria-controls="rp-panel-sml" aria-selected="false" tabindex="-1" aria-label="Малая деталь с отверстиями" style="--x:41.2%;--y:55%;--w:8.6%;--h:17.2%;--r:12px;"><span class="rp-dot" aria-hidden="true"></span><span class="rp-tip">Малая деталь с отверстиями</span></button>
+          </div>
         </div>
+        <figcaption class="rp-cap">Алюминиевый сплав Д16 (2024), без покрытия. <span class="mouse">Наведите курсор на деталь — справа откроется карточка.</span><span class="touch">Нажмите на деталь — ниже откроется карточка.</span></figcaption>
+      </figure>
+      <div class="pp-panels">
+      <div class="pp-panel" role="tabpanel" id="rp-panel-cyl" aria-labelledby="rp-tab-cyl" data-part="cyl">
+        <div class="pp-body">
+          <div class="pp-eyebrow">Деталь на фото</div>
+          <h3>Цилиндрический корпус</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Что видно</span><span class="v">Мелкая резьба на открытом торце, продольные пазы с отверстиями на концах, фланец с отверстиями, расточенная внутренняя полость</span></div>
+            <div class="fact"><span class="k">Технология</span><span class="v">Токарно-фрезерная обработка</span></div>
+            <div class="fact"><span class="k">Материал</span><span class="v">Алюминиевый сплав Д16 (2024)</span></div>
+            <div class="fact"><span class="k">Покрытие</span><span class="v">Без покрытия</span></div>
+            <div class="fact"><span class="k">Допуск</span><span class="v">На ключевые размеры — не более 0,01 мм</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-turning.html" class="btn btn-ghost on-light">Токарная обработка →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="rp-panel-rnd" aria-labelledby="rp-tab-rnd" data-part="rnd" hidden>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Деталь на фото</div>
+          <h3>Круглый корпус с карманами</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Что видно</span><span class="v">Многоуровневые карманы с тонкими рёбрами и стенками, площадки с отверстиями, боковой выступ на кромке</span></div>
+            <div class="fact"><span class="k">Технология</span><span class="v">Токарно-фрезерная обработка</span></div>
+            <div class="fact"><span class="k">Материал</span><span class="v">Алюминиевый сплав Д16 (2024)</span></div>
+            <div class="fact"><span class="k">Покрытие</span><span class="v">Без покрытия</span></div>
+            <div class="fact"><span class="k">Допуск</span><span class="v">На ключевые размеры — не более 0,01 мм</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-turning.html" class="btn btn-ghost on-light">Токарная обработка →</a>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="rp-panel-sml" aria-labelledby="rp-tab-sml" data-part="sml" hidden>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Деталь на фото</div>
+          <h3>Малая деталь с отверстиями</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Что видно</span><span class="v">Ступенчатый блок с двумя поперечными отверстиями</span></div>
+            <div class="fact"><span class="k">Технология</span><span class="v">Фрезерная обработка</span></div>
+            <div class="fact"><span class="k">Материал</span><span class="v">Алюминиевый сплав Д16 (2024)</span></div>
+            <div class="fact"><span class="k">Покрытие</span><span class="v">Без покрытия</span></div>
+            <div class="fact"><span class="k">Допуск</span><span class="v">На ключевые размеры — не более 0,01 мм</span></div>
+          </div>
+          <div class="pp-actions">
+            <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>
+            <a href="services/cnc-milling.html" class="btn btn-ghost on-light">О фрезеровке ЧПУ →</a>
+          </div>
+        </div>
+      </div>
       </div>
     </div>
   </div>
@@ -110,7 +169,7 @@
           <h3>Корпус</h3>
           <div class="fact-list">
             <div class="fact"><span class="k">Технология</span><span class="v">Фрезеровка ЧПУ: 3-, 4- и 5-осевая обработка</span></div>
-            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Алюминий 6061 — анодирование, партия 50–5000 шт.<br>Алюминий 7075 — твёрдое анодирование, партия 20–3000 шт.</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Алюминий 6061 (АД33) — анодирование, партия 100 шт.<br>Алюминий 7075 (В95) — электрополировка, партия 20–3000 шт.</span></div>
             <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">до ±0,01 мм, уточняется по чертежу</span></div>
             <div class="fact"><span class="k">Что обычно делают</span><span class="v">Корпусные детали, кронштейны, пресс-формы и сложные узлы</span></div>
             <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
@@ -129,7 +188,7 @@
           <h3>Вал</h3>
           <div class="fact-list">
             <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка ЧПУ</span></div>
-            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь 316 — полировка, партия 20–5000 шт.</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь 316 (08Х17Н13М2) — никелирование, партия 300 шт.</span></div>
             <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">высокая, шероховатость от Ra 0,4; диаметр до 500 мм, длина до 2000 мм</span></div>
             <div class="fact"><span class="k">Что обычно делают</span><span class="v">Валы, оси и резьбовые компоненты</span></div>
             <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии; для валов — контроль резьб и посадок</span></div>
@@ -147,7 +206,7 @@
           <h3>Кронштейн</h3>
           <div class="fact-list">
             <div class="fact"><span class="k">Технология</span><span class="v">5-осевая фрезеровка</span></div>
-            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Титан Grade 5 — пассивация, партия 10–1000 шт.</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Титан Grade 5 (ВТ6) — пассивация, партия 10–1000 шт.</span></div>
             <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">до ±0,01 мм (5-осевая обработка), уточняется по чертежу</span></div>
             <div class="fact"><span class="k">Что обычно делают</span><span class="v">Кронштейны, корпусные детали и сложные узлы</span></div>
             <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
@@ -166,7 +225,7 @@
           <h3>Втулка</h3>
           <div class="fact-list">
             <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка ЧПУ</span></div>
-            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь 304 — пассивация, партия 100–20000 шт.</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь 304 (08Х18Н10) — пассивация, партия 100–20000 шт.</span></div>
             <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">высокая, шероховатость от Ra 0,4</span></div>
             <div class="fact"><span class="k">Что обычно делают</span><span class="v">Втулки, штуцеры, ниппели и оси</span></div>
             <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии</span></div>
@@ -202,9 +261,9 @@
           <h3>Крепёж и фитинги</h3>
           <div class="fact-list">
             <div class="fact"><span class="k">Технология</span><span class="v">Токарная обработка ЧПУ и холодная штамповка</span></div>
-            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь (A2, A4), углеродистая сталь с покрытием (цинк, чернение), титан, латунь.<br>Пример: латунный фитинг C36000 — никелирование по запросу, партия 500–50000 шт.</span></div>
+            <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Нержавеющая сталь: A2 (08Х18Н10), A4 (08Х17Н13М2); углеродистая сталь с покрытием (цинк, чернение), титан, латунь.<br>Пример: латунный фитинг C36000 (ЛС59-1) — никелирование по запросу, партия 500–50000 шт.</span></div>
             <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">головка и привод ±0,02–0,05 мм; резьба ISO, поле допуска 6g/6H стандартно</span></div>
-            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы, первая деталь, межоперационный и финальный контроль партии; резьба — калибрами проходной/непроходной на каждой партии</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Входящие материалы и первая деталь, далее выборочный контроль партии; резьба — калибрами проходной/непроходной</span></div>
           </div>
           <div class="pp-actions">
             <a href="contacts.html" class="btn btn-primary">Отправить чертёж →</a>

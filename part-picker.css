@@ -1,4 +1,4 @@
-/* Part picker — интерактивный подбор по типу детали (products.html).
+/* Интерактив страницы «Наши работы» (gallery.html): подбор по типу детали (.pp-*) и точки на реальном фото (.rp-*).
    Использует переменные и компоненты основного styles.css (.fact-list, .btn, .dim-line). */
 .pp{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.12fr); gap:32px; align-items:start; }
 .pp-hint{ font-family:var(--font-mono); font-size:.74rem; letter-spacing:.05em; text-transform:uppercase; color:var(--mist-400); margin:0 0 14px; }
@@ -53,3 +53,23 @@
   .pp-tile:hover{ transform:none; }
   .pp-tile:hover .pp-thumb img{ transform:none; }
 }
+
+/* ---------- Реальное фото с интерактивными точками ---------- */
+.rp{ display:grid; grid-template-columns:minmax(0,1.04fr) minmax(0,1fr); gap:32px; align-items:start; }
+.rp-figure{ margin:0; }
+.rp-stage{ position:relative; background:#05080c; border:1px solid var(--steel-200); overflow:hidden; line-height:0; }
+.rp-stage img{ display:block; width:100%; height:auto; }
+.rp-chip{ position:absolute; left:14px; top:14px; z-index:3; line-height:1; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.06em; text-transform:uppercase; color:#fff; background:rgba(23,26,28,.72); border:1px solid rgba(255,255,255,.25); padding:7px 10px; }
+.rp-hots{ position:absolute; inset:0; pointer-events:none; }
+.rp-hot{ position:absolute; left:var(--x); top:var(--y); width:var(--w); height:var(--h); margin:0; padding:0; background:transparent; border:2px solid transparent; border-radius:var(--r,16px); cursor:pointer; pointer-events:auto; transition:border-color .2s ease, background-color .25s ease, box-shadow .25s ease; }
+.rp-hot:hover, .rp-hot:focus-visible, .rp-hot[aria-selected="true"]{ border-color:var(--copper-400); background-color:rgba(190,130,70,.10); box-shadow:0 0 0 1px rgba(0,0,0,.35), 0 0 28px rgba(190,130,70,.28); outline:none; }
+.rp-dot{ position:absolute; left:50%; top:50%; width:16px; height:16px; margin:-8px 0 0 -8px; border-radius:50%; background:var(--copper-400); border:2px solid #fff; animation:rp-pulse 2.2s ease-out infinite; transition:opacity .2s ease; }
+.rp-hot:hover .rp-dot, .rp-hot:focus-visible .rp-dot, .rp-hot[aria-selected="true"] .rp-dot{ opacity:0; animation:none; }
+@keyframes rp-pulse{ 0%{ box-shadow:0 0 0 0 rgba(190,130,70,.55); } 70%{ box-shadow:0 0 0 14px rgba(190,130,70,0); } 100%{ box-shadow:0 0 0 0 rgba(190,130,70,0); } }
+.rp-tip{ position:absolute; left:10px; top:10px; line-height:1.2; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; color:#fff; background:rgba(23,26,28,.82); padding:5px 8px; opacity:0; transform:translateY(-3px); transition:opacity .2s ease, transform .2s ease; pointer-events:none; }
+.rp-hot:hover .rp-tip, .rp-hot:focus-visible .rp-tip, .rp-hot[aria-selected="true"] .rp-tip{ opacity:1; transform:none; }
+.rp-cap{ margin:12px 0 0; color:var(--mist-400); font-size:.85rem; line-height:1.5; }
+@media (hover:none){ .rp-cap .mouse{ display:none; } }
+@media (hover:hover){ .rp-cap .touch{ display:none; } }
+@media (max-width:900px){ .rp{ grid-template-columns:1fr; gap:24px; } }
+@media (prefers-reduced-motion:reduce){ .rp-dot{ animation:none; } .rp-hot, .rp-tip{ transition:none; } }
