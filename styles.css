@@ -1009,3 +1009,23 @@ p { line-height: 1.6; margin: 0; }
 .check-list li{ position:relative; padding:6px 0 6px 24px; color:var(--mist-400); font-size:.93rem; line-height:1.5; }
 .check-list li::before{ content:""; position:absolute; left:2px; top:13px; width:9px; height:5px; border-left:2px solid var(--copper-500); border-bottom:2px solid var(--copper-500); transform:rotate(-45deg); }
 .note-line{ margin:14px 0 0; color:var(--mist-400); font-size:.85rem; line-height:1.5; }
+
+/* Плюсы доставки (4 пункта в ряд) */
+.dl-points{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+.dl-point{ border-top:2px solid var(--copper-400); padding-top:14px; }
+.dl-point strong{ display:block; font-family:var(--font-display); font-size:1.05rem; margin-bottom:6px; }
+.dl-point span{ color:var(--mist-400); font-size:.9rem; line-height:1.5; }
+@media (max-width:860px){ .dl-points{ grid-template-columns:1fr 1fr; } }
+@media (max-width:540px){ .dl-points{ grid-template-columns:1fr; } }
+
+/* Шкала срока поставки (4 части) */
+.dl-timeline{ list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:0; counter-reset:none; }
+.dl-timeline li{ position:relative; padding:18px 20px 18px 20px; background:#fff; border:1px solid var(--steel-200); margin-left:-1px; }
+.dl-timeline li:first-child{ margin-left:0; }
+.dl-timeline li strong{ display:block; font-family:var(--font-display); font-size:1.02rem; margin:8px 0 6px; }
+.dl-timeline li span:not(.dl-t-n){ color:var(--mist-400); font-size:.88rem; line-height:1.5; display:block; }
+.dl-t-n{ display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; background:var(--copper-400); color:#fff; font-family:var(--font-mono); font-size:.8rem; }
+@media (max-width:860px){ .dl-timeline{ grid-template-columns:1fr 1fr; } .dl-timeline li{ margin-left:0; margin-top:-1px; } }
+@media (max-width:540px){ .dl-timeline{ grid-template-columns:1fr; } }
+.process-grid-6 .process-step p{ color:var(--mist-400); }
+.process-grid-6 .process-step h3{ color:var(--ink-900); }
