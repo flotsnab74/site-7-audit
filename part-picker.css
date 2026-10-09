@@ -55,7 +55,7 @@
 }
 
 /* ---------- Реальное фото с интерактивными точками ---------- */
-.rp{ display:grid; grid-template-columns:minmax(0,1.04fr) minmax(0,1fr); gap:32px; align-items:start; }
+.rp{ display:grid; grid-template-columns:minmax(0,.86fr) minmax(0,1fr); gap:32px; align-items:start; }
 .rp-figure{ margin:0; }
 .rp-stage{ position:relative; background:#05080c; border:1px solid var(--steel-200); overflow:hidden; line-height:0; }
 .rp-stage img{ display:block; width:100%; height:auto; }
