@@ -1059,3 +1059,14 @@ p { line-height: 1.6; margin: 0; }
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
 
 /* h3→h2 copy: стили карточек продублированы для h2 (порядок заголовков) */
+
+/* Страница расчёта: выбор способа подать заявку */
+.path-switch{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:28px; }
+.path-btn{ font-family:var(--font-body); text-align:left; color:var(--white); background:var(--graphite-800); border:1px solid var(--graphite-700); border-radius:2px; padding:16px 20px; cursor:pointer; display:flex; flex-direction:column; gap:4px; transition:border-color .2s ease, background .2s ease; }
+.path-btn:hover{ border-color:var(--copper-500); }
+.path-btn.is-active{ border-color:var(--copper-500); box-shadow:inset 3px 0 0 var(--copper-500); }
+.path-title{ font-family:var(--font-display); font-weight:700; font-size:1.1rem; }
+.path-sub{ font-size:.85rem; color:var(--mist-200); }
+.path-panel[hidden]{ display:none; }
+.path-panel .form-note{ color:var(--mist-200); }
+@media (max-width:640px){ .path-switch{ grid-template-columns:1fr; } }
