@@ -76,7 +76,8 @@ def prio(f):
     if f.startswith('services/'): return '0.8'
     if f in ('equipment.html','gallery.html','materials.html','quality.html','delivery.html','contacts.html'): return '0.7'
     return '0.6'
-rows=['  <url><loc>%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>'%(url_of(f),DATES[f]['modified'],prio(f)) for f in pages]
+INDEXABLE=[f for f in pages if 'noindex' not in open(f,encoding='utf-8').read()]
+rows=['  <url><loc>%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>'%(url_of(f),DATES[f]['modified'],prio(f)) for f in INDEXABLE]
 open('sitemap.xml','w',encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join(rows)+'\n</urlset>\n')
 # robots
 r=open('robots.txt',encoding='utf-8').read()

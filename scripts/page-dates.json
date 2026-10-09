@@ -86,5 +86,13 @@
  "services/welding.html": {
   "published": "2026-10-07",
   "modified": "2026-10-09"
+ },
+ "quote.html": {
+  "published": "2026-10-09",
+  "modified": "2026-10-09"
+ },
+ "thanks.html": {
+  "published": "2026-10-09",
+  "modified": "2026-10-09"
  }
 }
