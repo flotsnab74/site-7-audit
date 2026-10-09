@@ -10,7 +10,7 @@
   function init(root) {
     var tiles = [].slice.call(root.querySelectorAll('.pp-tile, .rp-hot'));
     var panels = [].slice.call(root.querySelectorAll('.pp-panel'));
-    if (!tiles.length || !panels.length) return;
+    if (!tiles.length || !panels.length) { initGal(root); return; }
     var current = null, timer = null;
 
     function select(id) {
@@ -61,7 +61,12 @@
       });
     });
 
-    // Мини-галереи внутри карточек (несколько фото одной детали)
+    initGal(root);
+    select(tiles[0].getAttribute('data-part'));
+  }
+
+  // Мини-галереи внутри карточек (несколько фото одной детали)
+  function initGal(root) {
     [].slice.call(root.querySelectorAll('[data-gal]')).forEach(function (gal) {
       var main = gal.querySelector('.pp-gal-main');
       var btns = [].slice.call(gal.querySelectorAll('.pp-gal-btn'));
@@ -70,6 +75,7 @@
         if (btn.classList.contains('is-on')) return;
         btns.forEach(function (b) { b.classList.toggle('is-on', b === btn); });
         var panel = gal.closest('.pp-panel');
+        if (gal.closest('.pp-solo')) panel = gal.closest('.rp').querySelector('.pp-body').closest('.pp-panel');
         var cap = btn.getAttribute('data-caption');
         if (cap !== null) {
           var capEl = panel && panel.querySelector('.pp-caption');
@@ -103,8 +109,6 @@
         }
       });
     });
-
-    select(tiles[0].getAttribute('data-part'));
   }
 
   [].slice.call(document.querySelectorAll('[data-part-picker]')).forEach(init);
