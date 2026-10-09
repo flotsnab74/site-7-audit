@@ -35,12 +35,19 @@ export default async function handler(req, res) {
     }
     if (!data || typeof data !== 'object' || Array.isArray(data)) data = {};
 
+    // Заголовок берём из темы формы (_subject): так в Telegram сразу видно,
+    // пришла ли заявка из конструктора или чертёж отправлен напрямую.
+    // Служебные поля формы (начинаются с «_») в сообщение не попадают.
+    const subject = (typeof data._subject === 'string' && data._subject.trim())
+      ? data._subject.trim()
+      : 'Новая заявка с сайта Precision Metalworks';
+
     const lines = Object.keys(data)
-      .filter((k) => typeof data[k] === 'string' && data[k].trim())
+      .filter((k) => !k.startsWith('_') && typeof data[k] === 'string' && data[k].trim())
       .map((k) => `${k}: ${data[k]}`);
 
     let text = lines.length
-      ? `📩 Новая заявка с сайта Precision Metalworks\n\n${lines.join('\n')}`
+      ? `📩 ${subject}\n\n${lines.join('\n')}`
       : '📩 Новая заявка с сайта Precision Metalworks (детали не распознаны, проверьте почту)';
 
     if (text.length > 3900) text = text.slice(0, 3900) + '…';

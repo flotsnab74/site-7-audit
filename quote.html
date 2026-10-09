@@ -178,6 +178,7 @@
         <h2 class="qb-question">Последний шаг: контакты и чертёж</h2>
         <div class="qb-summary" id="qbSummary"></div>
         <form id="quoteForm" class="form-grid" action="https://formsubmit.co/ik_technology@mail.ru" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="Источник заявки" value="Конструктор ТЗ">
           <input type="hidden" name="Технология" id="hf-tech">
           <input type="hidden" name="Материал" id="hf-material">
           <input type="hidden" name="Покрытие" id="hf-coating">
@@ -206,7 +207,8 @@
     </div>
     <div class="path-panel" id="path-direct" role="tabpanel" aria-labelledby="tab-direct" hidden>
       <form id="quickForm" class="form-grid" action="https://formsubmit.co/ik_technology@mail.ru" method="POST" enctype="multipart/form-data">
-        <input type="hidden" name="_subject" value="Новая заявка с сайта — Чертёж напрямую">
+        <input type="hidden" name="_subject" value="Новая заявка с сайта — Чертёж напрямую (без конструктора)">
+        <input type="hidden" name="Источник заявки" value="Чертёж напрямую (без конструктора)">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_next" value="">
@@ -381,6 +383,7 @@
       try{
         var fd=new FormData(form), payload={};
         fd.forEach(function(v,k){ if(k!=='Чертёж' && typeof v==='string' && v) payload[k]=v; });
+        var fi=form.querySelector('input[type="file"]'); if(fi && fi.files && fi.files[0]) payload['Чертёж']='приложен к письму: '+fi.files[0].name;
         navigator.sendBeacon('/api/notify', new Blob([JSON.stringify(payload)],{type:'application/json'}));
       }catch(e){}
     });
