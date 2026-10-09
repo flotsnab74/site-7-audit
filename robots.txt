@@ -1,4 +1,54 @@
+# Поисковые системы и ИИ-боты допущены на все страницы сайта (кроме служебного /api/)
 User-agent: *
+Allow: /
+Disallow: /api/
+
+# Яндекс (поиск, Алиса, «Нейро»)
+User-agent: Yandex
+Allow: /
+Disallow: /api/
+
+# Google и Gemini
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /api/
+
+# ChatGPT / OpenAI
+User-agent: GPTBot
+Allow: /
+Disallow: /api/
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /api/
+
+# Claude / Anthropic
+User-agent: ClaudeBot
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-User
+Allow: /
+Disallow: /api/
+
+User-agent: Claude-SearchBot
+Allow: /
+Disallow: /api/
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /api/
+
+User-agent: Perplexity-User
 Allow: /
 Disallow: /api/
 

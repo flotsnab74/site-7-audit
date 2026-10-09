@@ -1,0 +1,90 @@
+{
+ "about.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "contacts.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "delivery.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "equipment.html": {
+  "published": "2026-10-09",
+  "modified": "2026-10-09"
+ },
+ "faq.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "gallery.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "guarantees.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "index.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "materials.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "production.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "quality.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/bending.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/cnc-milling.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/cnc-turning.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/compare.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/fasteners.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/finishing.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/index.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/laser-cutting.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/prototyping.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/stamping.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ },
+ "services/welding.html": {
+  "published": "2026-10-07",
+  "modified": "2026-10-09"
+ }
+}

@@ -4,9 +4,18 @@ JSON-LD (url, BreadcrumbList), sitemap.xml, robots.txt.
 Запуск из корня репозитория:  python3 scripts/set-base.py https://pmc.ru
 Скрипт можно запускать повторно (идемпотентен) — при смене домена достаточно запустить с новым адресом."""
 import sys,re,json,glob,os,html,datetime
-BASE=(sys.argv[1] if len(sys.argv)>1 else 'https://site-7-audit.vercel.app').rstrip('/')
+ARGS=sys.argv[1:]
+TOUCH=[]
+if '--touch' in ARGS:
+    k=ARGS.index('--touch'); TOUCH=ARGS[k+1:]; ARGS=ARGS[:k]
+BASE=(ARGS[0] if ARGS else 'https://site-7-audit.vercel.app').rstrip('/')
+DATES=json.load(open('scripts/page-dates.json',encoding='utf-8'))
 today=datetime.date.today().isoformat()
 pages=sorted(glob.glob('*.html')+glob.glob('services/*.html'))
+for f in pages:
+    DATES.setdefault(f,{'published':today,'modified':today})
+for f in TOUCH: DATES[f]['modified']=today   # --touch стр.html — отметить реальное изменение содержания
+json.dump(DATES,open('scripts/page-dates.json','w',encoding='utf-8'),ensure_ascii=False,indent=1)
 def url_of(f): return BASE+'/' if f=='index.html' else BASE+'/'+f
 def title_of(t):
     m=re.search(r'<title>(.*?)</title>',t,re.S); s=html.unescape(m.group(1)) if m else ''
@@ -33,12 +42,23 @@ for f in pages:
     keep=[]
     for b in blocks:
         j=json.loads(b)
-        if j.get('@type')=='BreadcrumbList': continue
+        if j.get('@type') in ('BreadcrumbList','WebPage','WebSite'): continue
         if j.get('@type') in ('Organization','ContactPage','AboutPage','Service','FAQPage'):
             j['url']=u
+            if j['@type'] in ('ContactPage','AboutPage','FAQPage'):
+                j['inLanguage']='ru'; j['datePublished']=DATES[f]['published']; j['dateModified']=DATES[f]['modified']
             if j['@type']=='Service': j.get('provider',{})['url']=BASE+'/'
             if j['@type']=='ContactPage': j['mainEntity']['url']=BASE+'/'
         keep.append(j)
+    if not any(j.get('@type') in ('ContactPage','AboutPage','FAQPage') for j in keep):
+        dm=re.search(r'<meta name="description" content="([^"]*)"',t)
+        wp={"@context":"https://schema.org","@type":"WebPage","url":u,"name":title_of(t),"inLanguage":"ru",
+            "datePublished":DATES[f]['published'],"dateModified":DATES[f]['modified'],
+            "isPartOf":{"@type":"WebSite","name":"Precision Metalworks Contract","url":BASE+'/'}}
+        if dm: wp["description"]=html.unescape(dm.group(1))
+        keep.append(wp)
+    if f=='index.html':
+        keep.append({"@context":"https://schema.org","@type":"WebSite","name":"Precision Metalworks Contract","url":BASE+'/',"inLanguage":"ru"})
     if f!='index.html':
         items=[{"@type":"ListItem","position":1,"name":"Главная","item":BASE+'/'}]
         if f.startswith('services/') and f!='services/index.html':
@@ -56,7 +76,7 @@ def prio(f):
     if f.startswith('services/'): return '0.8'
     if f in ('equipment.html','gallery.html','materials.html','quality.html','delivery.html','contacts.html'): return '0.7'
     return '0.6'
-rows=['  <url><loc>%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>'%(url_of(f),today,prio(f)) for f in pages]
+rows=['  <url><loc>%s</loc><lastmod>%s</lastmod><changefreq>monthly</changefreq><priority>%s</priority></url>'%(url_of(f),DATES[f]['modified'],prio(f)) for f in pages]
 open('sitemap.xml','w',encoding='utf-8').write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+'\n'.join(rows)+'\n</urlset>\n')
 # robots
 r=open('robots.txt',encoding='utf-8').read()
