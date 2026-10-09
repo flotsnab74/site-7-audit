@@ -90,3 +90,6 @@
 .rp-hot.rp-poly{ border:0; border-radius:0; }
 .rp-hot.rp-poly:hover, .rp-hot.rp-poly:focus-visible, .rp-hot.rp-poly[aria-selected="true"]{ background-color:rgba(190,130,70,.26); box-shadow:none; }
 .rp-hot.rp-poly .rp-tip{ display:none; }
+
+/* строки характеристик, для которых у выбранного изделия нет данных */
+.pp-body .fact-list .fact[hidden]{ display:none; }

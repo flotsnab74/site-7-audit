@@ -69,11 +69,24 @@
       function show(btn) {
         if (btn.classList.contains('is-on')) return;
         btns.forEach(function (b) { b.classList.toggle('is-on', b === btn); });
+        var panel = gal.closest('.pp-panel');
         var cap = btn.getAttribute('data-caption');
         if (cap !== null) {
-          var panel = gal.closest('.pp-panel');
           var capEl = panel && panel.querySelector('.pp-caption');
           if (capEl) capEl.textContent = cap;
+        }
+        // характеристики именно этого изделия: строки с data-spec обновляются, строки без данных скрываются
+        var raw = btn.getAttribute('data-specs');
+        if (raw && panel) {
+          var specs = null;
+          try { specs = JSON.parse(raw); } catch (e) { specs = null; }
+          if (specs) {
+            [].slice.call(panel.querySelectorAll('[data-spec]')).forEach(function (row) {
+              var v = specs[row.getAttribute('data-spec')];
+              var vEl = row.querySelector('.v');
+              if (v && vEl) { vEl.textContent = v; row.hidden = false; } else { row.hidden = true; }
+            });
+          }
         }
         main.classList.add('is-swapping');
         setTimeout(function () {
