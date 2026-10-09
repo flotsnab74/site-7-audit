@@ -144,7 +144,7 @@
         <button type="button" class="pp-tile" role="tab" id="pp-tab-korpus" data-part="korpus" aria-controls="pp-panel-korpus" aria-selected="true"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-housing-d16.jpg" alt=""></span><span class="pp-label">Корпус<span class="pp-dot" aria-hidden="true"></span></span></button>
         <button type="button" class="pp-tile" role="tab" id="pp-tab-val" data-part="val" aria-controls="pp-panel-val" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-shaft.jpg" alt=""></span><span class="pp-label">Вал<span class="pp-dot" aria-hidden="true"></span></span></button>
         <button type="button" class="pp-tile" role="tab" id="pp-tab-kronshtein" data-part="kronshtein" aria-controls="pp-panel-kronshtein" aria-selected="false" tabindex="-1"><span class="pp-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 10h12v32h28v12H12z"/><circle cx="18" cy="17" r="2.2"/><circle cx="18" cy="34" r="2.2"/><circle cx="36" cy="48" r="2.2"/><circle cx="46" cy="48" r="2.2"/></svg></span><span class="pp-label">Кронштейн<span class="pp-dot" aria-hidden="true"></span></span></button>
-        <button type="button" class="pp-tile" role="tab" id="pp-tab-vtulka" data-part="vtulka" aria-controls="pp-panel-vtulka" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-bushing.jpg" alt=""></span><span class="pp-label">Втулка<span class="pp-dot" aria-hidden="true"></span></span></button>
+        <button type="button" class="pp-tile" role="tab" id="pp-tab-vtulka" data-part="vtulka" aria-controls="pp-panel-vtulka" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-bushing-real.jpg" alt=""></span><span class="pp-label">Втулка<span class="pp-dot" aria-hidden="true"></span></span></button>
         <button type="button" class="pp-tile" role="tab" id="pp-tab-flanets" data-part="flanets" aria-controls="pp-panel-flanets" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-flange-1.jpg" alt=""></span><span class="pp-label">Фланец<span class="pp-dot" aria-hidden="true"></span></span></button>
         <button type="button" class="pp-tile" role="tab" id="pp-tab-krepezh" data-part="krepezh" aria-controls="pp-panel-krepezh" aria-selected="false" tabindex="-1"><span class="pp-thumb"><img loading="lazy" decoding="async" src="assets/part-fastener-set.jpg" alt=""></span><span class="pp-label">Крепёж и фитинги<span class="pp-dot" aria-hidden="true"></span></span></button>
         <button type="button" class="pp-tile" role="tab" id="pp-tab-listovaya" data-part="listovaya" aria-controls="pp-panel-listovaya" aria-selected="false" tabindex="-1"><span class="pp-thumb"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M8 38l14-10h34L42 38z"/><path d="M8 38v6h34v-6M42 38l14-10v6L42 44"/><ellipse cx="24" cy="33" rx="3" ry="1.6"/><ellipse cx="36" cy="33" rx="3" ry="1.6"/></svg></span><span class="pp-label">Листовая деталь<span class="pp-dot" aria-hidden="true"></span></span></button>
@@ -154,7 +154,13 @@
       </div>
       <div class="pp-panels">
       <div class="pp-panel" role="tabpanel" id="pp-panel-korpus" aria-labelledby="pp-tab-korpus" data-part="korpus">
-        <div class="pp-media"><img loading="lazy" decoding="async" src="assets/part-housing-d16.jpg" alt="Фрезерованный алюминиевый корпус с отверстиями и фланцем"></div>
+        <div class="pp-media pp-gal" data-gal>
+          <div class="pp-gal-stage"><img class="pp-gal-main" loading="lazy" decoding="async" src="assets/part-housing-d16.jpg" alt="Фрезерованный алюминиевый корпус с отверстиями и фланцем"></div>
+          <div class="pp-gal-thumbs" role="group" aria-label="Фото корпусов" style="--n:2;">
+            <button type="button" class="pp-gal-btn is-on" data-src="assets/part-housing-d16.jpg" data-alt="Фрезерованный алюминиевый корпус с отверстиями и фланцем" data-caption="На фото: корпус из Д16, электрополировка" aria-label="Фото 1 из 2"><img loading="lazy" decoding="async" src="assets/part-housing-d16.jpg" alt=""></button>
+            <button type="button" class="pp-gal-btn" data-src="assets/part-cnc-precision.jpg" data-alt="Прецизионная ЧПУ-деталь: фланцевый корпус с боковыми окнами и рядом крепёжных отверстий" data-caption="Прецизионная ЧПУ-деталь" aria-label="Фото 2 из 2"><img loading="lazy" decoding="async" src="assets/part-cnc-precision.jpg" alt=""></button>
+          </div>
+        </div>
         <div class="pp-body">
           <div class="pp-caption">На фото: корпус из Д16, электрополировка</div>
           <div class="pp-eyebrow">Для корпуса обычно подходят</div>
@@ -207,9 +213,15 @@
         </div>
       </div>
       <div class="pp-panel" role="tabpanel" id="pp-panel-vtulka" aria-labelledby="pp-tab-vtulka" data-part="vtulka" hidden>
-        <div class="pp-media"><img loading="lazy" decoding="async" src="assets/part-bushing.jpg" alt="Втулка с фланцем"></div>
+        <div class="pp-media pp-gal" data-gal>
+          <div class="pp-gal-stage"><img class="pp-gal-main" loading="lazy" decoding="async" src="assets/part-bushing-real.jpg" alt="Партия фланцевых втулок и чертёж «Втулка» в плёнке"></div>
+          <div class="pp-gal-thumbs" role="group" aria-label="Фото втулок" style="--n:2;">
+            <button type="button" class="pp-gal-btn is-on" data-src="assets/part-bushing-real.jpg" data-alt="Партия фланцевых втулок и чертёж «Втулка» в плёнке" data-caption="На фото: партия фланцевых втулок" aria-label="Фото 1 из 2"><img loading="lazy" decoding="async" src="assets/part-bushing-real.jpg" alt=""></button>
+            <button type="button" class="pp-gal-btn" data-src="assets/part-bushing.jpg" data-alt="Втулка с фланцем" data-caption="На фото: втулка из нержавеющей стали" aria-label="Фото 2 из 2"><img loading="lazy" decoding="async" src="assets/part-bushing.jpg" alt=""></button>
+          </div>
+        </div>
         <div class="pp-body">
-          <div class="pp-caption">На фото: втулка из нержавеющей стали</div>
+          <div class="pp-caption">На фото: партия фланцевых втулок</div>
           <div class="pp-eyebrow">Для втулки обычно подходят</div>
           <h3>Втулка</h3>
           <div class="fact-list">
@@ -230,7 +242,7 @@
           <div class="pp-gal-thumbs" role="group" aria-label="Фото фланцев" style="--n:3;">
             <button type="button" class="pp-gal-btn is-on" data-src="assets/part-flange-1.jpg" data-alt="Фланец из стали 40Х с восемью крепёжными отверстиями и кольцевой проточкой на торце" aria-label="Фото 1 из 3"><img loading="lazy" decoding="async" src="assets/part-flange-1.jpg" alt=""></button>
             <button type="button" class="pp-gal-btn" data-src="assets/part-flange-2.jpg" data-alt="Фланец из стали 40Х со ступицей, резьбой в центральном отверстии и отверстиями в выточке на торце" aria-label="Фото 2 из 3"><img loading="lazy" decoding="async" src="assets/part-flange-2.jpg" alt=""></button>
-            <button type="button" class="pp-gal-btn" data-src="assets/part-flange-3.jpg" data-alt="Фланцевый корпус с боковыми окнами и рядом крепёжных отверстий" aria-label="Фото 3 из 3"><img loading="lazy" decoding="async" src="assets/part-flange-3.jpg" alt=""></button>
+            <button type="button" class="pp-gal-btn" data-src="assets/part-flange-3.jpg" data-alt="Партия фланцев со ступицей и внутренними шлицами" aria-label="Фото 3 из 3"><img loading="lazy" decoding="async" src="assets/part-flange-3.jpg" alt=""></button>
           </div>
         </div>
         <div class="pp-body">
@@ -238,7 +250,7 @@
           <div class="pp-eyebrow">Для фланца обычно подходят</div>
           <h3>Фланец</h3>
           <div class="fact-list">
-            <div class="fact"><span class="k">Что видно</span><span class="v">Крепёжные отверстия по окружности, кольцевая проточка на торце, ступица с внутренней резьбой, фланцевый корпус с боковыми окнами</span></div>
+            <div class="fact"><span class="k">Что видно</span><span class="v">Крепёжные отверстия по окружности, кольцевая проточка на торце, ступица с внутренней резьбой или шлицами, малые резьбовые отверстия на фланце</span></div>
             <div class="fact"><span class="k">Технология</span><span class="v">Токарно-фрезерная обработка</span></div>
             <div class="fact"><span class="k">Материал и покрытие</span><span class="v">Сталь 40Х (AISI 5140) — без покрытия, партия 50–10000 шт.</span></div>
             <div class="fact"><span class="k">Точность (ориентир)</span><span class="v">по чертежу; критичные размеры проверяются на первой детали</span></div>

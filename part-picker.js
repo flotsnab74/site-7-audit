@@ -69,6 +69,12 @@
       function show(btn) {
         if (btn.classList.contains('is-on')) return;
         btns.forEach(function (b) { b.classList.toggle('is-on', b === btn); });
+        var cap = btn.getAttribute('data-caption');
+        if (cap !== null) {
+          var panel = gal.closest('.pp-panel');
+          var capEl = panel && panel.querySelector('.pp-caption');
+          if (capEl) capEl.textContent = cap;
+        }
         main.classList.add('is-swapping');
         setTimeout(function () {
           main.src = btn.getAttribute('data-src');

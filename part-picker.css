@@ -63,7 +63,7 @@
 .rp-hots{ position:absolute; inset:0; pointer-events:none; }
 .rp-hot{ position:absolute; left:var(--x); top:var(--y); width:var(--w); height:var(--h); margin:0; padding:0; background:transparent; border:2px solid transparent; border-radius:var(--r,16px); cursor:pointer; pointer-events:auto; transition:border-color .2s ease, background-color .25s ease, box-shadow .25s ease; }
 .rp-hot:hover, .rp-hot:focus-visible, .rp-hot[aria-selected="true"]{ border-color:var(--copper-400); background-color:rgba(190,130,70,.10); box-shadow:0 0 0 1px rgba(0,0,0,.35), 0 0 28px rgba(190,130,70,.28); outline:none; }
-.rp-dot{ position:absolute; left:50%; top:50%; width:16px; height:16px; margin:-8px 0 0 -8px; border-radius:50%; background:var(--copper-400); border:2px solid #fff; animation:rp-pulse 2.2s ease-out infinite; transition:opacity .2s ease; }
+.rp-dot{ position:absolute; left:var(--dx,50%); top:var(--dy,50%); width:16px; height:16px; margin:-8px 0 0 -8px; border-radius:50%; background:var(--copper-400); border:2px solid #fff; animation:rp-pulse 2.2s ease-out infinite; transition:opacity .2s ease; }
 .rp-hot:hover .rp-dot, .rp-hot:focus-visible .rp-dot, .rp-hot[aria-selected="true"] .rp-dot{ opacity:0; animation:none; }
 @keyframes rp-pulse{ 0%{ box-shadow:0 0 0 0 rgba(190,130,70,.55); } 70%{ box-shadow:0 0 0 14px rgba(190,130,70,0); } 100%{ box-shadow:0 0 0 0 rgba(190,130,70,0); } }
 .rp-tip{ position:absolute; left:10px; top:10px; line-height:1.2; font-family:var(--font-mono); font-size:.7rem; letter-spacing:.04em; text-transform:uppercase; white-space:nowrap; color:#fff; background:rgba(23,26,28,.82); padding:5px 8px; opacity:0; transform:translateY(-3px); transition:opacity .2s ease, transform .2s ease; pointer-events:none; }
@@ -85,3 +85,8 @@
 .pp-gal-btn:hover, .pp-gal-btn:focus-visible{ opacity:1; outline:none; border-color:rgba(255,255,255,.7); }
 .pp-gal-btn.is-on{ opacity:1; border-color:var(--copper-500); }
 @media (prefers-reduced-motion:reduce){ .pp-gal-stage .pp-gal-main, .pp-gal-btn{ transition:none; } }
+
+/* ---------- Точки-контуры (многоугольник по форме предмета, подсветка заливкой) ---------- */
+.rp-hot.rp-poly{ border:0; border-radius:0; }
+.rp-hot.rp-poly:hover, .rp-hot.rp-poly:focus-visible, .rp-hot.rp-poly[aria-selected="true"]{ background-color:rgba(190,130,70,.26); box-shadow:none; }
+.rp-hot.rp-poly .rp-tip{ display:none; }

@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="part-picker.css">
 </head>
 <body>
 <header class="site-header">
@@ -86,6 +87,59 @@
     </div>
   </div>
 </section>
+<section class="section section-light reveal">
+  <div class="container">
+    <div class="section-head">
+      <div class="dim-line no-rule">Партия на контроле</div>
+      <h2>Детали, замеры и чертёж</h2>
+    </div>
+    <div class="rp" data-part-picker>
+      <figure class="rp-figure">
+        <div class="rp-stage">
+          <img src="assets/quality-batch.jpg" width="1344" height="896" loading="lazy" decoding="async" alt="Синяя тара с пронумерованными резьбовыми деталями, лист с таблицей измерений и чертёж детали">
+          <div class="rp-hots" role="tablist" aria-label="Элементы на фото">
+            <button type="button" class="rp-hot rp-poly" role="tab" id="rp-tab-tara" data-part="tara" aria-controls="rp-panel-tara" aria-selected="true" aria-label="Детали в таре" style="--x:2.23%;--y:16.74%;--w:53.94%;--h:61.38%;--dx:44.1%;--dy:50.9%;clip-path:polygon(0.0% 3.6%, 84.1% 0.0%, 87.6% 10.0%, 87.6% 87.6%, 97.9% 89.1%, 100.0% 100.0%, 64.8% 99.1%, 30.3% 90.9%, 4.1% 89.1%);"><span class="rp-dot" aria-hidden="true"></span></button>
+            <button type="button" class="rp-hot rp-poly" role="tab" id="rp-tab-tabl" data-part="tabl" aria-controls="rp-panel-tabl" aria-selected="false" tabindex="-1" aria-label="Таблица измерений" style="--x:49.48%;--y:20.98%;--w:50.22%;--h:50.45%;--dx:34.8%;--dy:31.4%;clip-path:polygon(0.0% 3.8%, 93.3% 0.0%, 100.0% 32.5%, 74.1% 19.2%, 27.3% 100.0%, 0.0% 97.8%);"><span class="rp-dot" aria-hidden="true"></span></button>
+            <button type="button" class="rp-hot rp-poly" role="tab" id="rp-tab-chert" data-part="chert" aria-controls="rp-panel-chert" aria-selected="false" tabindex="-1" aria-label="Чертёж" style="--x:56.40%;--y:30.69%;--w:43.60%;--h:69.31%;--dx:51.5%;--dy:45.9%;clip-path:polygon(69.5% 0.0%, 100.0% 8.9%, 100.0% 100.0%, 24.2% 100.0%, 0.0% 75.7%);"><span class="rp-dot" aria-hidden="true"></span></button>
+          </div>
+        </div>
+        <figcaption class="rp-cap"><span class="mouse">Наведите курсор на детали, таблицу или чертёж — справа откроется описание.</span><span class="touch">Нажмите на детали, таблицу или чертёж — ниже откроется описание.</span></figcaption>
+      </figure>
+      <div class="pp-panels">
+      <div class="pp-panel" role="tabpanel" id="rp-panel-tara" aria-labelledby="rp-tab-tara" data-part="tara">
+        <div class="pp-body">
+          <div class="pp-eyebrow">Элемент на фото</div>
+          <h3>Детали в таре</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Что видно</span><span class="v">Цилиндрические детали с резьбой на торце, уложены в синюю тару; на каждой детали написан номер</span></div>
+            <div class="fact"><span class="k">Контроль</span><span class="v">Финальный контроль партии перед упаковкой: размеры, резьбы, посадки, покрытие и внешний вид</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="rp-panel-tabl" aria-labelledby="rp-tab-tabl" data-part="tabl" hidden>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Элемент на фото</div>
+          <h3>Таблица измерений</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Что видно</span><span class="v">Лист с таблицей: номера деталей по столбцам, контролируемые параметры по строкам</span></div>
+            <div class="fact"><span class="k">Документ</span><span class="v">Протокол измерений входит в комплект документов, который вы получаете с партией</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="pp-panel" role="tabpanel" id="rp-panel-chert" aria-labelledby="rp-tab-chert" data-part="chert" hidden>
+        <div class="pp-body">
+          <div class="pp-eyebrow">Элемент на фото</div>
+          <h3>Чертёж</h3>
+          <div class="fact-list">
+            <div class="fact"><span class="k">Что видно</span><span class="v">Чертёж детали с видами, разрезом, размерами и обозначениями шероховатости</span></div>
+            <div class="fact"><span class="k">Приёмка</span><span class="v">Критичные размеры и допуски фиксируются в техническом задании по вашему чертежу до запуска партии, приёмка идёт по ним</span></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
 <div class="cta-band reveal">
   <div class="container">
     <h2>Нужен протокол контроля под ваш стандарт?</h2>
@@ -140,5 +194,6 @@
   });
 </script>
 <script src="reveal.js" defer></script>
+<script src="part-picker.js" defer></script>
 </body>
 </html>
